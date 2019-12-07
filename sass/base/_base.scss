@@ -1,0 +1,55 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /*наследуется всеми элемента от родителя - body*/
+}
+
+html {
+  //устанавливаем размер шрифта для всего документа в %, так чтобы пользователь смог изменить шрифт при изменении масштаба, 16px-по дефолту у браузера, мы хотим 10px, след.(10px*100%)/16px=62,5% теперь 62,5% размер шрифта для всего документа. 62,5%=1rem
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = наш размер шрифта/размер шрифта в браузере по умолчанию = 62.5%
+
+  /* 
+  если делаем по-старому без mixins
+  @media (max-width: 600px) {
+    font-size: 50%;
+  }
+  в итоге оба кода должны будут появиться в скомпилированном style.css
+  */
+
+  // если делаем по-новому для улучшенной работы
+
+  /*
+  @include respond(phone) {
+    font-size: 50%;
+  }
+  больше нам не нужен так как tab-port даст также размер шрифта 50%
+  */
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+  }
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px, 12/16 = 75%
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem; /*отступ между границей экрана и страницей - белая обводка*/
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

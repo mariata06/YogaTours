@@ -1,0 +1,74 @@
+.header {
+  position: relative;
+  height: 85vh; /*85 % от view-port height*/
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/yoga-adulte-small.jpg); /*градиентный слой будет покрывать фоновую картинку*/
+  background-size: cover;
+  background-position: bottom; /*при изменении ширины экрана, подрезает картинку сверху, чтобы ее низ был полностью виден*/
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 75vh,
+      0 100%
+    ); /*первая координата -верхний левый угол фигуры и далее по часовой стрелке*/
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 75vh,
+      0 100%
+    ); /*первая координата -верхний левый угол фигуры и далее по часовой стрелке*/
+    height: 95vh; /*95 % от view-port height*/
+  }
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/yoga-adulte.jpg); /*градиентный слой будет покрывать фоновую картинку*/
+  }
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 85vh,
+      0 100%
+    ); /*первая координата -верхний левый угол фигуры и далее по часовой стрелке*/
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 85vh,
+      0 100%
+    ); /*первая координата -верхний левый угол фигуры и далее по часовой стрелке*/
+  }
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(
+      -20%,
+      -60%
+    ); /*центрирует блок по вертикали и горизонтали */
+    text-align: center;
+  }
+}

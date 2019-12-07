@@ -1,0 +1,6 @@
+Специфичность Селекторов
+
+https://jsbin.com/doyanobaqo/edit?html,css,output
+
+https://codepen.io/Turmasova/pen/KKPLjZM
+
