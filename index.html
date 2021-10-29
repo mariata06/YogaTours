@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
 <head>
   <meta charset="utf-8" />
@@ -36,15 +36,18 @@
   <header class="header">
 
     <div class="header__logo-box">
-
-      <img srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" alt="logo" class="header__logo">
+      <picture>
+        <!-- <img srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" alt="logo" class="header__logo"> -->
+        <img src="img/logo-1x.png" srcset="img/logo-2x.png 2x" alt="logo" class="header__logo">
+        <!-- <img src="img/footer-logo.png" srcset="img/footer-logo.png 2x" alt="Лого Rendv" width="170" height="46"> -->
+      </picture>
     </div>
 
     <div class="header__text-box">
       <h1 class="heading-primary">
-        <span class="heading-primary--main">Harmony</span>
+        <span class="heading-primary__main">Harmony</span>
 
-        <span class="heading-primary--sub">a step on the way to oneself</span>
+        <span class="heading-primary__sub">a step on the way to oneself</span>
       </h1>
 
       <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
@@ -136,7 +139,6 @@
               repudiandae laudantium, ipsa possimus nihil illo in natus.</p>
           </div>
         </div>
-      </div>
       </div>
     </section>
 
@@ -346,7 +348,7 @@
     <div class="footer__logo-box">
 
       <picture class="footer__logo">
-        <source srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" media="max-width: 37.5em">
+        <source srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" media="(max-width: 37.5em)">
         <img srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" alt="logo" class="footer__logo" src="img/logo-1x.png">
       </picture>
 
@@ -398,8 +400,6 @@
       </div>
     </div>
   </div>
-
-  </section>
 
 </body>
 

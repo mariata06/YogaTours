@@ -1,5 +1,0 @@
-http://jsfiddle.net/wnT4G/
-
-https://jsbin.com/woxezenubu/1/edit?html,css,js,output - другой вариант
-
-http://www.cyberforum.ru/javascript-jquery/thread1347036.html 

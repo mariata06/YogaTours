@@ -9,7 +9,3 @@
 node_modules/
 npm-debug.*
 Thumbs.db
-Screen/
-sassAcidColors/
-CSSbeforeBuild/
-notUsedImg/
